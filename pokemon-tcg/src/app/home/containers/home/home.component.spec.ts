@@ -7,12 +7,20 @@ import { FormsModule } from '@angular/forms';
 import { OrderModule } from 'ngx-order-pipe';
 import { RouterModule } from '@angular/router';
 import { CardSearchPipe } from '../../pipes/card-search.pipe';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { LoadingComponent } from '../../../shared/components/loading/loading.component';
+import { PokemonTcgService } from './../../../shared/services/pokemon-tcg.service';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
+  // let tcgService = fixture.debugElement.injector.get(PokemonTcgService);
+  // let tcgServiceStub: Partial<PokemonTcgService>;
+
+  // tcgServiceStub = {
+  //   getAllCards = function(){},
+  //   getCard
+  // };
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -30,5 +38,15 @@ describe('HomeComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should set query to string', () => {
+    const http = HttpClient;
+    const pokemontcgservice = new PokemonTcgService(<any> http);
+    const comp = new HomeComponent(pokemontcgservice);
+
+    expect(comp.cardQuery).toBe(undefined, 'undefined at first');
+    comp.queryReceiver('pikachu');
+    expect(comp.cardQuery).toBe('pikachu', 'should set query to string');
   });
 });

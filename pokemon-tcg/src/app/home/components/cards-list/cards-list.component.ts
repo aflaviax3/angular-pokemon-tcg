@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ListedCard } from '../../models/card-list.model';
+import { ListedCard } from '../../interfaces/card-list.interface';
 
 @Component({
   selector: 'app-cards-list',
@@ -17,7 +17,6 @@ export class CardsListComponent implements OnInit {
   ngOnInit(): void {
     this.cardFilteredList = this.cardList;
   }
- 
 
 
 }

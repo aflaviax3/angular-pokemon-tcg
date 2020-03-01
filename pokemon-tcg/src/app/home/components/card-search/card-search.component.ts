@@ -19,7 +19,6 @@ export class CardSearchComponent implements OnInit {
   onKey(value: string) {
     this.query = value;
     this.searchQuery.emit(this.query);
-    console.log('resposta', this.searchQuery.emit(this.query));
   }
 
 

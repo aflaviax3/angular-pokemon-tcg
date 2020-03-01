@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +13,6 @@ export class PokemonTcgService {
   }
 
   getAllCards() {
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'count':  '10000',
-          'page-size': '10000'
-        })
-      };
       return this.http.get(this.baseUrl  + '/cards?pageSize=1000');
   }
 

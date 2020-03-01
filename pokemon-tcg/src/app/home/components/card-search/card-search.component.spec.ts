@@ -31,4 +31,14 @@ describe('CardSearchComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('should output search query', () => {
+    const comp = new CardSearchComponent();
+    const query = 'pikachu';
+    
+    comp.searchQuery.subscribe((myQuery: string) => expect(myQuery).toBe(query));
+
+    comp.onKey(query);
+  });
 });

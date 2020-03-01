@@ -40,7 +40,6 @@ export class DetailComponent implements OnInit {
     this.pokemontcgService.getCard(this.cardId)
       .subscribe((data: CardInfo) => {
         this.cardInfo = data.card;
-        console.log(data);
       }
     );
   }

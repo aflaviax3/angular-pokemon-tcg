@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CardList, ListedCard } from './../../models/card-list.model';
+import { CardList, ListedCard } from './../../interfaces/card-list.interface';
 import { PokemonTcgService } from '../../../shared/services/pokemon-tcg.service';
 
 @Component({
@@ -39,10 +39,7 @@ export class HomeComponent implements OnInit {
   }
 
   queryReceiver(search) {
-    this.cardQuery = search;
-    console.log('Foi emitido o evento e chegou no pai >>>> ', search);
+    this.cardQuery = search;    
   }
-
-
 
 }

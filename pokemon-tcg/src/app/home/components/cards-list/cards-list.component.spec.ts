@@ -29,4 +29,37 @@ describe('CardsListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should set input values', () => {
+    const comp = new CardsListComponent();
+    const cardList =     
+      [  
+        {
+          "id": "base5-20",
+          "name": "Dark Blastoise",
+          "imageUrl": "https://images.pokemontcg.io/base5/20.png",
+          "types": [
+              "Water"
+          ]
+        },
+        {
+          "id":"dp6-90",
+          "name":"Cubone",
+          "imageUrl":"https://images.pokemontcg.io/dp6/90.png",
+          "types":[
+            "Fighting"
+          ]
+        }
+      ];
+    const cardQuery = 'pikachu';
+    
+    comp.cardList = cardList;
+    comp.cardQuery = cardQuery;
+
+    comp.ngOnInit();
+
+    expect(comp.cardList).toEqual(cardList);
+    expect(comp.cardQuery).toEqual(cardQuery);
+    expect(comp.cardFilteredList).toEqual(cardList);
+  });
 });

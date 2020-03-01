@@ -11,7 +11,7 @@ import { CardsListComponent } from '../../home/components/cards-list/cards-list.
 import { CardSearchComponent } from '../../home/components/card-search/card-search.component';
 import { CardSearchPipe } from '../../home/pipes/card-search.pipe';
 import { FormsModule } from '@angular/forms';
-import { CardList, ListedCard } from './../../home/models/card-list.model';
+import { CardList, ListedCard } from './../../home/interfaces/card-list.interface';
 
 import { defer } from 'rxjs';
 import { CardInfo } from '../../detail/interfaces/card-info';

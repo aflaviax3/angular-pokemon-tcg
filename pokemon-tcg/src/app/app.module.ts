@@ -25,7 +25,8 @@ import { DetailModule } from './detail/detail.module';
     DetailModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
-      { path: 'card/:cardId', component: DetailComponent }
+      { path: 'card/:cardId', component: DetailComponent },
+      { path: 'cards', redirectTo: '' }
     ])
   ],
   providers: [],
