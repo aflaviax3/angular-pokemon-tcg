@@ -1,0 +1,36 @@
+<div class="d-flex flex-column">
+    <div class="d-flex">
+        <img class="mw-100" src="{{cardInfo.imageUrlHiRes}}" />
+    </div>
+    <div class="d-flex flex-column">
+        <div class="d-flex">
+            <span><b>Card Number:</b></span>{{cardInfo.number}}
+        </div>
+        <div class="d-flex">
+           <span><b>Type: </b></span> {{cardInfo.types}}
+        </div>
+        <div class="d-flex flex-column" *ngFor="let attack of cardInfo.attacks">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex">
+                    <span class="d-flex" *ngFor="let energy of attack.cost">
+                        <i class="energy {{energy | lowercase}}"></i>
+                    </span>
+                </div>
+                <span class="d-flex justify-content-center"><b>{{attack.name}}</b></span>            
+                <span class="d-flex">{{attack.damage}}</span>
+            </div>
+            <div class="d-flex justify-content-center">
+                <p>{{attack.text}}</p>
+            </div>
+        </div>
+        <div class="d-flex" *ngFor="let resistance of cardInfo.resistances">
+            {{resistance.type}}
+            {{resistance.value}}
+        </div>
+        <div class="d-flex" *ngFor="let weakness of cardInfo.weaknesses">
+            {{weakness.type}}
+            {{weakness.value}}
+        </div>  
+
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="form-group pt-5">
+    <input 
+        type="text" 
+        class="form-control" 
+        placeholder="Search" 
+        [(ngModel)]="query" 
+        #searchInput
+        (keyup)="onKey(searchInput.value)"
+        id="listSearch"
+    >
+</div>
