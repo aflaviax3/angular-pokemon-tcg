@@ -9,12 +9,12 @@ import { CardInfo, Card } from './../../interfaces/card-info';
   selector: 'app-detail',
   template: `
   <div class="container h-100 pt-5" *ngIf="cardInfo; else loading">
-    <h1 class="pt-4 text-center" *ngIf="cardInfo">{{cardInfo.name}}</h1>
+    <h2 class="pt-4 text-center mb-4" *ngIf="cardInfo">{{cardInfo.name}}</h2>
     <app-card-info 
       [cardInfo]="cardInfo"
     >
     </app-card-info>
-    <button type="button" class="btn btn-dark" (click)="goBack()">< Back</button>
+    <button type="button" class="btn btn-danger btn-block mt-4" (click)="goBack()">< Back</button>
   </div>
   <ng-template #loading>
     <app-loading></app-loading>

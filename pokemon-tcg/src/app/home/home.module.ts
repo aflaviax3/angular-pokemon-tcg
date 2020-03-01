@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OrderModule } from 'ngx-order-pipe';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 import { HomeComponent } from './containers/home/home.component';
 import { CardsListComponent } from './components/cards-list/cards-list.component';
@@ -17,7 +18,8 @@ import { CardSearchPipe } from './pipes/card-search.pipe';
     FormsModule,
     ReactiveFormsModule,
     OrderModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   declarations: [
     HomeComponent,

@@ -5,7 +5,7 @@ import { PokemonTcgService } from '../../../shared/services/pokemon-tcg.service'
 @Component({
   selector: 'app-home',
   template: `
-  <div *ngIf="cardList?.length" class="pt-4">
+  <div *ngIf="cardList?.length; else loading" class="pt-4">
     <app-card-search 
       (searchQuery)="queryReceiver($event)"
     >
@@ -16,6 +16,9 @@ import { PokemonTcgService } from '../../../shared/services/pokemon-tcg.service'
     >
     </app-cards-list>
   </div>
+  <ng-template #loading>
+    <app-loading></app-loading>
+  </ng-template>
   `,
   styleUrls: ['./home.component.scss']
 })
@@ -31,9 +34,7 @@ export class HomeComponent implements OnInit {
     this.pokemonTcgService.getAllCards()
     .subscribe((data: CardList) => {
         this.cardList = data.cards;
-    });
-
-    
+    });  
 
   }
 

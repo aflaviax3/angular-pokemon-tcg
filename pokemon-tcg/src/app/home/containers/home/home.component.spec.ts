@@ -8,6 +8,7 @@ import { OrderModule } from 'ngx-order-pipe';
 import { RouterModule } from '@angular/router';
 import { CardSearchPipe } from '../../pipes/card-search.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { LoadingComponent } from '../../../shared/components/loading/loading.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -15,7 +16,7 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent, CardSearchComponent, CardsListComponent, CardSearchPipe ],
+      declarations: [ HomeComponent, CardSearchComponent, CardsListComponent, CardSearchPipe, LoadingComponent ],
       imports: [ FormsModule, OrderModule, RouterModule.forRoot([]), HttpClientModule ]
     })
     .compileComponents();
