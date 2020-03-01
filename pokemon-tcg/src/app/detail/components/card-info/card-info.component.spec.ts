@@ -2,13 +2,15 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CardInfoComponent } from './card-info.component';
 
+import { Card } from './../../interfaces/card-info'
+
 describe('CardInfoComponent', () => {
   let component: CardInfoComponent;
   let fixture: ComponentFixture<CardInfoComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CardInfoComponent ]
+      declarations: [ CardInfoComponent]
     })
     .compileComponents();
   }));

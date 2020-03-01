@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CardList, ListedCard } from './../../models/card-list.model';
 import { PokemonTcgService } from '../../../shared/services/pokemon-tcg.service';
-import { groupBy, mergeMap, toArray } from 'rxjs/operators';
-import { from, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
