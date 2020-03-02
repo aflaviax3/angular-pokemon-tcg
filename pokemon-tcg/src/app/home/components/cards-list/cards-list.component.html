@@ -24,12 +24,12 @@
             </a>
           </li>
         </ul>
-        <ul class="list-group list-group-flush" *ngIf="cardQuery"> 
-          <li *ngFor="let card of cardFilteredList  | cardSearch: cardQuery" class="list-group-item bg-dark border-secondary"> 
+        <ul class="list-group list-group-flush d-flex flex-wrap flex-lg-row flex-md-column" *ngIf="cardQuery"> 
+          <li *ngFor="let card of cardFilteredList  | cardSearch: cardQuery" class="col-lg-3 d-inline-flex list-group-item bg-dark border-secondary"> 
             <a 
               [routerLink]="['/card', card.id]"
             >
-              <div class="d-flex align-items-stretch">
+              <div class="d-flex flex-lg-column flex-md-row align-items-lg-center align-items-stretch">
                   <div class="d-flex p-2 w-50">
                       <img class="mw-100" src="{{card.imageUrl}}"/>
                   </div>

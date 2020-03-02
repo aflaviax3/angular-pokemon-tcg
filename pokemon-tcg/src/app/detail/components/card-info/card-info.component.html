@@ -9,17 +9,20 @@
         <div class="d-flex mb-2">
             <span class="mr-1"><b>Card Number:</b></span>{{cardInfo.number}}
         </div>
-        <div class="d-flex mb-2">
-           <span class="mr-1"><b>Type: </b></span> {{cardInfo.types}}
+        <div class="d-flex mb-2" *ngIf="cardInfo.types">
+           <span class="mr-1"><b>Type: </b></span> 
+           <span *ngFor="let type of cardInfo.types">
+               {{type}}
+           </span>
         </div>
         <div class="d-flex flex-column mt-2" *ngFor="let attack of cardInfo.attacks">
             <div class="d-flex justify-content-between">
-                <div class="d-flex">
+                <div class="d-flex mr-2">
                     <span class="d-flex" *ngFor="let energy of attack.cost">
                         <i class="energy {{energy | lowercase}}"></i>
                     </span>
                 </div>
-                <span class="d-flex justify-content-center"><b>{{attack.name}}</b></span>            
+                <span class="d-flex mr-2 justify-content-center"><b>{{attack.name}}</b></span>            
                 <span class="d-flex">{{attack.damage}}</span>
             </div>
             <div class="d-flex mt-1">
